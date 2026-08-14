@@ -10,7 +10,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 import os
 from pathlib import Path
-from .backend import routers, database
+
+try:
+    from backend import routers, database
+except ImportError:  # pragma: no cover - fallback for direct script execution
+    from src.backend import routers, database
 
 # Initialize web host
 app = FastAPI(
@@ -32,4 +36,5 @@ def root():
 
 # Include routers
 app.include_router(routers.activities.router)
+app.include_router(routers.announcements.router)
 app.include_router(routers.auth.router)
