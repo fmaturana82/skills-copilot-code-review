@@ -21,6 +21,10 @@
             <span class="user-icon">👤</span>
             <span>Login</span>
           </button>
+          <button id="manage-announcements-button" class="header-action-button hidden" type="button" aria-label="Manage announcements">
+            <span>📢</span>
+            <span>Announcements</span>
+          </button>
           <div id="user-info" class="hidden">
             <span id="display-name"></span>
             <button id="logout-button">Logout</button>
@@ -28,6 +32,8 @@
         </div>
       </div>
     </header>
+
+    <div id="announcement-banner-container" aria-live="polite"></div>
 
     <main>
       <section id="activities-container">
@@ -134,9 +140,41 @@
       </div>
     </div>
 
+    <div id="announcement-modal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="announcement-modal-title">
+      <div class="modal-content announcement-modal-content">
+        <div class="announcement-modal-header">
+          <h3 id="announcement-modal-title">Announcements</h3>
+          <span class="close-announcement-modal" aria-label="Close announcements">&times;</span>
+        </div>
+
+        <div class="announcement-modal-body">
+          <div id="announcements-list" class="announcements-list"></div>
+
+          <form id="announcement-form" class="announcement-form">
+            <input type="hidden" id="announcement-id" />
+            <label for="announcement-message">Message</label>
+            <textarea id="announcement-message" rows="3" maxlength="280" required placeholder="Share a school update..."></textarea>
+
+            <div class="announcement-date-row">
+              <div>
+                <label for="announcement-start-date">Start date (optional)</label>
+                <input type="date" id="announcement-start-date" />
+              </div>
+              <div>
+                <label for="announcement-expiration-date">Expiration date *</label>
+                <input type="date" id="announcement-expiration-date" required />
+              </div>
+            </div>
+
+            <div class="announcement-form-actions">
+              <button type="button" class="secondary-button" id="announcement-cancel-button">Cancel</button>
+              <button type="submit" class="primary-button" id="announcement-save-button">Save announcement</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="app.js"></script>
   </body>
-  <div class="announcement-banner">
-  📢 Activity registration is open until the end of the month. Don't lose your spot!
-</div>
 </html>

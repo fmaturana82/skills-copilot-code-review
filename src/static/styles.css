@@ -73,6 +73,70 @@ header h2 {
   font-size: 1.2rem;
 }
 
+#user-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+#user-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-action-button,
+.icon-button,
+#logout-button,
+.primary-button,
+.secondary-button,
+.cancel-btn,
+.confirm-btn,
+.register-button,
+button.category-filter,
+button.day-filter,
+button.time-filter,
+button#search-button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--primary-text);
+  padding: 8px 14px;
+  font-weight: 700;
+}
+
+.header-action-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#announcement-banner-container {
+  margin: 12px 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.announcement-banner-item {
+  background: linear-gradient(135deg, var(--warning-light), #ffe9c7);
+  color: #7a4c00;
+  border: 1px solid rgba(255, 152, 0, 0.35);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
